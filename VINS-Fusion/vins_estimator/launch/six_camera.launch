@@ -1,0 +1,19 @@
+<launch>
+
+    <!--node name="rvizvisualisation" pkg="rviz" type="rviz" output="log" args="-d $(find vins)/../config/vins_rviz_config.rviz" >
+
+    </node-->
+
+    <node pkg="vins" type="vins_node" name="vins_estimator" output="screen" args="$(find config)/own/six_camera_imu_config.yaml">
+
+    </node>
+    
+    <node pkg="loop_fusion" type="loop_fusion_node" name="loop_fusion" output="screen" args="$(find config)/own/six_camera_imu_config.yaml">
+
+    </node>
+
+    <node pkg="vins" type="ground_truth" name="ground_truth_node" output="screen" >
+
+    </node>
+
+</launch>

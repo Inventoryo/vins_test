@@ -1,0 +1,15 @@
+<launch>
+
+    <!--node name="rvizvisualisation" pkg="rviz" type="rviz" output="log" args="-d $(find vins)/../config/vins_rviz_config.rviz" >
+
+    </node-->
+
+    <node pkg="vins" type="kitti_gps_test" name="kitti_gps_test" output="screen" args="$(find config)/kitti_raw/kitti_10_03_config.yaml /home/bb/Desktop/data/kitti/2011_09_26/2011_09_26_drive_0117_sync/">
+
+    </node>
+    
+    <node pkg="global_fusion" type="global_fusion_node" name="global_fusion_node" output="log" >
+
+    </node>
+
+</launch>

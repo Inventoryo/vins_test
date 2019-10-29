@@ -1,0 +1,15 @@
+<launch>
+
+    <!--node name="rvizvisualisation" pkg="rviz" type="rviz" output="log" args="-d $(find vins)/../config/vins_rviz_config.rviz" >
+
+    </node-->
+
+    <node pkg="vins" type="kitti_odom_test" name="kitti_odom_test" output="screen" args="$(find config)/kitti_raw/kitti_10_03_config.yaml /home/bb/Desktop/data/kitti/dataset/sequences/00/">
+
+    </node>
+    
+    <node pkg="loop_fusion" type="loop_fusion_node" name="loop_fusion" output="log" args="$(find config)/kitti_odom/kitti_config00-02.yaml">
+
+    </node>
+
+</launch>
